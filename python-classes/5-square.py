@@ -1,64 +1,68 @@
 #!/usr/bin/python3
-class Square:
-    """
-    Class that defines a square.
-    
-    """
+""" Module Sqaure """
 
-    
+
+class Square:
+    """ Square class defined by geometric shap
+        Attributes:
+            size (int): Size of square
+    """
     def __init__(self, size=0):
-         """
-        Initializes the square with a given size.
-        
+        """initializes the square
         Args:
-            size (int): The size of the square (default is 0).
+            size (int): size of a side of the square
+        Returns:
+            None
         """
-        self.size = size
+        self.__size = size
+
+    def area(self):
+        """
+        set square square area
+        Return:
+            the current square area (int)
+        """
+        return self.__size ** 2
 
     @property
     def size(self):
-         """
-        Retrieves the size of the square.
-        
-        Returns:
-            int: The size of the square.
+        """
+        getter of size
+        Return:
+            Size of square
         """
         return self.__size
 
     @size.setter
     def size(self, value):
-         """
-        Sets the size of the square.
-        
-        Args:
-            value (int): The size of the square.
-            
-        Raises:
-            TypeError: If size is not an integer.
-            ValueError: If size is less than 0.
-        """ 
-        if not isinstance(value, int):
-            raise TypeError("size must be an integer")
-        if value < 0:
-            raise ValueError("size must be >= 0")
-        self.__size = value
-
-    def area(self):
-         """
-        Computes the area of the square.
-        
-        Returns:
-            int: The area of the square.
         """
-        return self.__size ** 2
+        Setter of size
+        Args:
+            size (int): size of a side of the square
+        Raises
+            TypeError: if size is not int
+            ValueError: size less than 0
+        Returns:
+            None
+        """
+     if type(value) is not int:
+         raise TypeError("size must be an integer")
+     elif value < 0:
+         raise ValueError("size must be >= 0")
+     else:
+         self.__size = value
 
     def my_print(self):
-         """
-        Prints the square with the character '#'.
-        If the size is 0, it prints an empty line.
-        """
         if self.__size == 0:
-            print("")
+            print()
         else:
-            for _ in range(self.__size):
-                print("#" * self.__size)
+            counter = self.__size
+            startsize = self.__size
+            coun_num = 0
+            while self.__size > coun_num:
+                while counter > 0:
+                    print("#", end="")
+                    counter -= 1
+                print()
+                counter = startsize
+                self.__size -= 1
