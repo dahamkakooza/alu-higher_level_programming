@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 """
-
 Module Sqaure
 
 """
@@ -39,7 +38,7 @@ class Square:
             Size of square
         """
         return self.__size
-    
+
     @size.setter
     def size(self, value):
         """
