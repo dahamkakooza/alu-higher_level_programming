@@ -51,3 +51,35 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
             self.__height = value
+# Test cases
+myrectangle = Rectangle(2, 4)
+print(sorted(myrectangle.__dict__))
+# Expected: {'_Rectangle__height': 4, '_Rectangle__width': 2}
+
+print(myrectangle.width)
+# Expected: 2
+
+print(myrectangle.height)
+# Expected: 4
+
+myrectangle = Rectangle(4)
+print("{} - {}".format(myrectangle.width, myrectangle.height))
+# Expected: 4 - 0
+
+myrectangle = Rectangle()
+print("{} - {}".format(myrectangle.width, myrectangle.height))
+# Expected: 0 - 0
+
+myrectangle = Rectangle(2, 4)
+print("{} - {}".format(myrectangle.width, myrectangle.height))
+myrectangle.width = 10
+print("{} - {}".format(myrectangle.width, myrectangle.height))
+# Expected: 2 - 4
+# Expected: 10 - 4
+
+myrectangle = Rectangle(2, 4)
+print("{} - {}".format(myrectangle.width, myrectangle.height))
+myrectangle.height = 10
+print("{} - {}".format(myrectangle.width, myrectangle.height))
+# Expected: 2 - 4
+# Expected: 2 - 10
