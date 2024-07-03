@@ -1,32 +1,35 @@
 #!/usr/bin/python3
-"""
-This module defines a class
-"""
+"""Module for a rectangle class."""
 
 
 class Rectangle:
-    """
-    This class has two attributes
-    """
+    """A class that defines a rectangle."""
 
     def __init__(self, width=0, height=0):
-        """
-        instantiates width and height
+        """Initialize a new Rectangle instance.
+        
+        Args:
+            width (int): The width of the rectangle (default is 0).
+            height (int): The height of the rectangle (default is 0).
         """
         self.width = width
         self.height = height
 
     @property
     def width(self):
-        """
-        function to return width if setter checks have passed
-        """
+        """Retrieve the width of the rectangle."""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """
-        setter validates if value is >= 0
+        """Set the width of the rectangle.
+     
+       Args:
+            value (int): The width to set.
+
+        Raises:
+            TypeError: If width is not an integer.
+            ValueError: If width is less than 0.
         """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
@@ -36,50 +39,22 @@ class Rectangle:
 
     @property
     def height(self):
-        """
-        function to return height if setter checks have passed
-        """
+        """Retrieve the height of the rectangle."""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """
-        setter validates if value is >= 0
+        """Set the height of the rectangle.
+        
+        Args:
+            value (int): The height to set.
+
+        Raises:
+            TypeError: If height is not an integer.
+            ValueError: If height is less than 0.
         """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
-            self.__height = value
-# Test cases
-myrectangle = Rectangle(2, 4)
-print(sorted(myrectangle.__dict__))
-# Expected: {'_Rectangle__height': 4, '_Rectangle__width': 2}
-
-print(myrectangle.width)
-# Expected: 2
-
-print(myrectangle.height)
-# Expected: 4
-
-myrectangle = Rectangle(4)
-print("{} - {}".format(myrectangle.width, myrectangle.height))
-# Expected: 4 - 0
-
-myrectangle = Rectangle()
-print("{} - {}".format(myrectangle.width, myrectangle.height))
-# Expected: 0 - 0
-
-myrectangle = Rectangle(2, 4)
-print("{} - {}".format(myrectangle.width, myrectangle.height))
-myrectangle.width = 10
-print("{} - {}".format(myrectangle.width, myrectangle.height))
-# Expected: 2 - 4
-# Expected: 10 - 4
-
-myrectangle = Rectangle(2, 4)
-print("{} - {}".format(myrectangle.width, myrectangle.height))
-myrectangle.height = 10
-print("{} - {}".format(myrectangle.width, myrectangle.height))
-# Expected: 2 - 4
-# Expected: 2 - 10
+        self.__height = value
