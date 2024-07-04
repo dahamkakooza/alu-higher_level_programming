@@ -8,7 +8,7 @@ This module defines a Square class for representing a square with various operat
 class Square:
     """ Square class defined by geometric shape
         Attributes:
-            size (int): Size of square
+        size (int): Size of square
     """
     def __init__(self, size=0):
         """initializes the square
@@ -82,5 +82,4 @@ if __name__ == "__main__":
 
     my_square.size = 0
     my_square.my_print()
-
     print("--")
