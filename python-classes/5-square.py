@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-""" Module Sqaure """
+""" Module Square """
 
 
 class Square:
-    """ Square class defined by geometric shap
+    """ Square class defined by geometric shape
         Attributes:
             size (int): Size of square
     """
@@ -14,11 +14,11 @@ class Square:
         Returns:
             None
         """
-        self.__size = size
+        self.size = size  # using the setter method for validation
 
     def area(self):
         """
-        set square square area
+        set square area
         Return:
             the current square area (int)
         """
@@ -38,31 +38,45 @@ class Square:
         """
         Setter of size
         Args:
-            size (int): size of a side of the square
+            value (int): size of a side of the square
         Raises
             TypeError: if size is not int
             ValueError: size less than 0
         Returns:
             None
         """
-     if type(value) is not int:
-         raise TypeError("size must be an integer")
-     elif value < 0:
-         raise ValueError("size must be >= 0")
-     else:
-         self.__size = value
+        if type(value) is not int:
+            raise TypeError("size must be an integer")
+        elif value < 0:
+            raise ValueError("size must be >= 0")
+        else:
+            self.__size = value
 
     def my_print(self):
+        """
+        Prints in stdout the square with the character #
+        If size is equal to 0, prints an empty line
+
+        """
         if self.__size == 0:
-            print()
+            print("")
         else:
-            counter = self.__size
-            startsize = self.__size
-            coun_num = 0
-            while self.__size > coun_num:
-                while counter > 0:
-                    print("#", end="")
-                    counter -= 1
-                print()
-                counter = startsize
-                self.__size -= 1
+            for _ in range(self.__size)
+                print("#" * self.__size)
+
+
+if __name__ == "__main__":
+    my_square = Square(3)
+    my_square.my_print()
+
+    print ("--")
+
+    my_square.size = 10
+    my_square.my_print()
+
+    print("--")
+
+    my_square.size = 0
+    my_square.my_print()
+
+    print ("--")
