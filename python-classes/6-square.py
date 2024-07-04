@@ -96,12 +96,13 @@ class Square:
         else:
             for _ in range(self.__position[1]):
                 print("")
-                for _ in range(self.__size):
-                    print(" " * self.__position[0] + "#" * self.__size)
+            for _ in range(self.__size):
+                print(" " * self.__position[0] + "#" * self.__size)
 
 
 if __name__ == "__main__":
     Square = __import__('6-square').Square
+    
     my_square_1 = Square(5, (3, 2))
     my_square_1.my_print()
 
