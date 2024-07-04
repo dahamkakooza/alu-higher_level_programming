@@ -22,3 +22,14 @@ class Rectangle(BaseGeometry):
         def __str__(self):
             """" area string represent """
             return ("[Rectangle] {:d}/{:d}".format(self.__width, self.__height))
+r = Rectangle(1, 4)
+print(r.area())  # Output: 4
+print(r)         # Output: [Rectangle] 1/4
+
+r = Rectangle(1411, 781)
+print(r.area())  # Output: 1101991
+print(r)         # Output: [Rectangle] 1411/781
+
+r = Rectangle(5, 5)
+print(r.area())  # Output: 25
+print(r)         # Output: [Rectangle] 5/5
