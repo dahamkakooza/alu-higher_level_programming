@@ -1,9 +1,6 @@
-""" using no module """
-
-
 class MyList(list):
-    """ my list class """
+    """ My list class """
 
     def print_sorted(self):
-        """ function prints list in sorted order """
+        """ Function prints list in sorted order """
 	print(sorted(self))
