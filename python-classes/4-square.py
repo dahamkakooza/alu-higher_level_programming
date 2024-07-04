@@ -1,12 +1,11 @@
 #!/usr/bin/python3
 """
-
 Module Sqaure
 """
 
 
 class Square:
-    
+
     """ Square class defined by geometric shap
         Attributes:
             size (int): Size of square
@@ -46,7 +45,7 @@ class Square:
         Returns:
             None
         """
-        
+
         if type(value) is not int:
             raise TypeError("size must be an integer")
         elif value < 0:
