@@ -63,15 +63,16 @@ class Square:
         if self.__size == 0:
             print("")
         else:
-            for _ in range(self.__size)
+            for _ in range(self.__size):
                 print("#" * self.__size)
 
-
 if __name__ == "__main__":
+    Square = __import__('5-square').Square
+
     my_square = Square(3)
     my_square.my_print()
 
-    print ("--")
+    print("--")
 
     my_square.size = 10
     my_square.my_print()
@@ -81,4 +82,4 @@ if __name__ == "__main__":
     my_square.size = 0
     my_square.my_print()
 
-    print ("--")
+    print("--")
