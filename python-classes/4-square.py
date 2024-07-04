@@ -2,6 +2,8 @@
 """
 Module Sqaure
 """
+
+
 class Square:
     """ Square class defined by geometric shap
         Attributes:
