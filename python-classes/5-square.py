@@ -2,6 +2,7 @@
 """
 Module Square.
 This module defines a Square class for representing a square with various operations.
+
 """
 
 
