@@ -1,14 +1,14 @@
 #!/usr/bin/python3
-""" 
-Module Square - Defines a class Square that represents a square with a size and position 
+"""
+Module Square.
+This module defines a Square class for representing a square with various operations.
 """
 
 
 class Square:
     """ Square class defined by geometric shape
         Attributes:
-            size (int): Size of square
-            position (tuple): Position of the square
+        size (int): Size of square
     """
     def __init__(self, size=0, position=(0, 0)):
         """initializes the square
