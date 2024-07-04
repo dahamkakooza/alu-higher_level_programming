@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
 Module Sqaure
+
 """
 
 
@@ -17,7 +18,7 @@ class Square:
             None
         """
         self.__size = size
-        
+
     def area(self):
         """
         set square square area
@@ -25,7 +26,7 @@ class Square:
             the current square area (int)
         """
         return self.__size ** 2
-    
+
     @property
     def size(self):
         """
@@ -34,7 +35,7 @@ class Square:
             Size of square
         """
         return self.__size
-    
+
     @size.setter
     def size(self, value):
         """
