@@ -9,6 +9,7 @@ class Square:
     """ Square class defined by geometric shape
         Attributes:
         size (int): Size of square
+        position (tuple): Position of the square
     """
     def __init__(self, size=0, position=(0, 0)):
         """initializes the square
@@ -18,8 +19,8 @@ class Square:
         Returns:
             None
         """
-        self.size = size
-        self.position = position
+        self.size = size  # using the setter method for validation
+        self.position = position  # using the setter method for validation
 
     def area(self):
         """
@@ -43,14 +44,14 @@ class Square:
         """
         Setter of size
         Args:
-            size (int): size of a side of the square
+            value (int): size of a side of the square
         Raises
             TypeError: if size is not int
             ValueError: size less than 0
         Returns:
             None
         """
-        type(value) is not int:
+        if type(value) is not int:
             raise TypeError("size must be an integer")
         elif value < 0:
             raise ValueError("size must be >= 0")
@@ -62,7 +63,7 @@ class Square:
         """
         getter of position
         Return:
-            position of square
+            Position of square
         """
         return self.__position
 
@@ -81,14 +82,32 @@ class Square:
             not all(isinstance(num, int) for num in value) or
             not all(num >= 0 for num in value)):
             raise TypeError("position must be a tuple of 2 positive integers")
-        self.__position = value
+        else:
+            self.__position = value
+
     def my_print(self):
         """
-        Print the square with the character #
+        Prints in stdout the square with the character #
+        If size is equal to 0, prints an empty line
+
         """
         if self.__size == 0:
-            print()
+            print("")
         else:
-            print("\n" * self.__position[1], end="")
-            for i in range(self.__size):
-                print(" " * self.__position[0] + "#" * self.__size)
+            for _ in range(self.__position[1]):
+                print("")
+                for _ in range(self.__size):
+                    print(" " * self.__position[0] + "#" * self.__size)
+
+
+if __name__ == "__main__":
+    Square = __import__('6-square').Square
+    my_square_1 = Square(3)
+    my_square_1.my_print()
+    print("--")
+    my_square_2 = Square(3, (1, 1))
+    my_square_2.my_print()
+    print("--")
+    my_square_3 = Square(3, (3, 0))
+    my_square_3.my_print()
+    print("--")
