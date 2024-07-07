@@ -7,7 +7,7 @@ This module defines a Rectangle class.
 class Rectangle:
     """
     Represents a rectangle.
-    
+
     Attributes:
         width (int): The width of the rectangle.
         height (int): The height of the rectangle.
@@ -72,7 +72,9 @@ class Rectangle:
         """Return a string representation of the rectangle using the print_symbol."""
         if self.__width == 0 or self.__height == 0:
             return ""
-        return "\n".join([str(self.print_symbol) * self.__width for _ in range(self.__height)])
+        return "\n".join(
+            [str(self.print_symbol) * self.__width for _ in range(self.__height)]
+        )
 
     def __repr__(self):
         """Return a string representation of the rectangle to recreate a new instance using eval."""
