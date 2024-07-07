@@ -7,10 +7,11 @@ This module defines a Square class for representing a square with various operat
 
 
 class Square:
-    """ Square class defined by geometric shape
-        Attributes:
-        size (int): Size of square
+    """Square class defined by geometric shape
+    Attributes:
+    size (int): Size of square
     """
+
     def __init__(self, size=0):
         """initializes the square
         Args:
@@ -26,7 +27,7 @@ class Square:
         Return:
             the current square area (int)
         """
-        return self.__size ** 2
+        return self.__size**2
 
     @property
     def size(self):
@@ -68,8 +69,9 @@ class Square:
             for _ in range(self.__size):
                 print("#" * self.__size)
 
+
 if __name__ == "__main__":
-    Square = __import__('5-square').Square
+    Square = __import__("5-square").Square
 
     my_square = Square(3)
     my_square.my_print()
