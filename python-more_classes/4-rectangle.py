@@ -71,7 +71,7 @@ class Rectangle:
 
     def __repr__(self):
         """Return a string representation of
-           the rectangle to recreate a new instance using eval.
-        
+        the rectangle to recreate a new instance using eval.
+
         """
         return f"Rectangle({self.__width}, {self.__height})"
