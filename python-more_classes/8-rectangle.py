@@ -69,7 +69,9 @@ class Rectangle:
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
-        """Return a string representation of the rectangle using the print_symbol."""
+        """Return a string representation of
+        the rectangle using the print_symbol.
+        """
         if self.__width == 0 or self.__height == 0:
             return ""
         return "\n".join(
@@ -77,7 +79,9 @@ class Rectangle:
         )
 
     def __repr__(self):
-        """Return a string representation of the rectangle to recreate a new instance using eval."""
+        """Return a string representation of
+        the rectangle to recreate a new instance using eval.
+        """
         return f"Rectangle({self.__width}, {self.__height})"
 
     def __del__(self):
@@ -98,7 +102,8 @@ class Rectangle:
             TypeError: If rect_1 or rect_2 is not an instance of Rectangle.
 
         Returns:
-            Rectangle: The rectangle with the bigger area, or rect_1 if they have the same area.
+            Rectangle: The rectangle with
+            the bigger area, or rect_1 if they have the same area.
         """
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
