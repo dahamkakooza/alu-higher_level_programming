@@ -1,16 +1,18 @@
 #!/usr/bin/python3
 """
 Module Square.
-This module defines a Square class for representing a square with various operations.
+This module defines a Square class
+for representing a square with various operations.
 """
 
 
 class Square:
-    """ Square class defined by geometric shape
-        Attributes:
-        size (int): Size of square
-        position (tuple): Position of the square
+    """Square class defined by geometric shape
+    Attributes:
+    size (int): Size of square
+    position (tuple): Position of the square
     """
+
     def __init__(self, size=0, position=(0, 0)):
         """initializes the square
         Args:
@@ -28,7 +30,7 @@ class Square:
         Return:
             the current square area (int)
         """
-        return self.__size ** 2
+        return self.__size**2
 
     @property
     def size(self):
@@ -78,9 +80,12 @@ class Square:
         Returns:
             None
         """
-        if (type(value) is not tuple or len(value) != 2 or
-            not all(isinstance(num, int) for num in value) or
-            not all(num >= 0 for num in value)):
+        if (
+            type(value) is not tuple
+            or len(value) != 2
+            or not all(isinstance(num, int) for num in value)
+            or not all(num >= 0 for num in value)
+        ):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
@@ -101,7 +106,7 @@ class Square:
 
 
 if __name__ == "__main__":
-    Square = __import__('6-square').Square
+    Square = __import__("6-square").Square
 
     my_square_1 = Square(5, (3, 2))
     my_square_1.my_print()
