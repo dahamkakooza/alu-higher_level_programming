@@ -73,7 +73,8 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ""
         return "\n".join(
-            [str(self.print_symbol) * self.__width for _ in range(self.__height)]
+            [str(self.print_symbol) *
+             self.__width for _ in range(self.__height)]
         )
 
     def __repr__(self):
@@ -100,7 +101,8 @@ class Rectangle:
             TypeError: If rect_1 or rect_2 is not an instance of Rectangle.
 
         Returns:
-            Rectangle: The rectangle with the bigger area, or rect_1 if they have the same area.
+            Rectangle: The rectangle with the bigger area,
+            or rect_1 if they have the same area.
         """
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
