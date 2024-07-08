@@ -6,22 +6,23 @@ This module defines a Rectangle class.
 
 class Rectangle:
     """
-Represents a rectangle.
+    Represents a rectangle.
 
-Attributes:
-    width (int): The width of the rectangle.
-    height (int): The height of the rectangle.
-    number_of_instances (int): The number of Rectangle instances.
+    Attributes:
+        width (int): The width of the rectangle.
+        height (int): The height of the rectangle.
+        number_of_instances (int): The number of Rectangle instances.
     """
+
     number_of_instances = 0
 
     def __init__(self, width=0, height=0):
         """
-Initialize a new Rectangle instance.
+        Initialize a new Rectangle instance.
 
-Args:
-width (int): The width of the rectangle.
-height (int): The height of the rectangle.
+        Args:
+        width (int): The width of the rectangle.
+        height (int): The height of the rectangle.
         """
         self.width = width
         self.height = height
@@ -72,7 +73,9 @@ height (int): The height of the rectangle.
         rect = "\n".join(["#" * self.__width for _ in range(self.__height)])
 
     def __repr__(self):
-        """Return a string representation of the rectangle to recreate a new instance using eval."""
+        """Return a string representation of
+        the rectangle to recreate a new instance using eval.
+        """
         return f"Rectangle({self.__width}, {self.__height})"
 
     def __del__(self):
