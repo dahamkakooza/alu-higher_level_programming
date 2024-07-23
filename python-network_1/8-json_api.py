@@ -1,26 +1,17 @@
 #!/usr/bin/python3
-"""Documented now"""
+""" documentation module here """
 import requests
-import sys
+from sys import argv
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
+    q = argv[1] if len(argv) > 1 else ""
     try:
-        params = sys.argv[1]
-    except IndexError:
-        params = ""
-    response = requests.post(
-        "http://0.0.0.0:5000/search_user",
-        data={"q": params}
-    )
-    try:
-        json_response = response.json()
-        if response.headers.get("Content-Type") == 'application/json':
-            if len(json_response) > 0:
-                print("[{}] {}".format(
-                    json_response["id"],
-                    json_response["name"])
-                )
-            else:
-                print("No result")
-    except:
+        re = requests.post('http://0.0.0.0:5000/search_user',
+                           data={'q': q}).json()
+        if 'id' in re and 'name' in re:
+            print("[{}] {}".format(re['id'], re['name']))
+        else:
+            print("No result")
+    except ValueError:
         print("Not a valid JSON")
