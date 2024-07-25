@@ -5,15 +5,17 @@
 def matrix_divided(matrix, div):
     """ "A function that divs a martix with a number"""
     if not isinstance(matrix, (list,)):
-        raise TypeError("matrix must be a matrix " "(list of lists) of integers/floats")
+        raise TypeError("matrix must be a matrix "
+                        "(list of lists) of integers/floats")
     for row in matrix:
         if type(row) != list:
-            raise TypeError("matrix must be a matrix " "t of lists) of integers/floats")
+            raise TypeError("matrix must be a matrix "
+                            "t of lists) of integers/floats")
         for item in row:
             if not isinstance(item, (int, float)):
                 raise TypeError(
-                    "matrix must be a matrix" " (list of lists) of integers/floats"
-                )
+                    "matrix must be a matrix"
+                    " (list of lists) of integers/floats")
     row_size = len(matrix[0])
     for row in matrix:
         if len(row) != row_size:
