@@ -1,10 +1,18 @@
 #!/usr/bin/node
+const argsCount = process.argv.length;
+const numbers = [];
 
-const args = process.argv.slice(2).map(Number);
+switch (argsCount) {
+  case 2:
+  case 3:
+    console.log(0);
+    break;
 
-if (args.length <= 1) {
-  console.log(0);
-} else {
-  args.sort((a, b) => b - a); // Sort in descending order
-  console.log(args[1]); // The second biggest is at index 1
+  default:
+    for (let i = 2; i < argsCount; i++) {
+      numbers.push(process.argv[i]);
+    }
+    numbers.sort((a, b) => b - a);
+    console.log(numbers[1]);
+    break;
 }
